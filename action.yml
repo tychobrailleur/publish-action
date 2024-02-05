@@ -1,0 +1,19 @@
+name: Publish Release
+description: Publishes unpublished github release.
+author: Sébastien Le Callonnec
+branding:
+  icon: 'send'
+  color: 'orange'
+inputs:
+  release:
+    description: 'Release path'
+    required: true
+  token:
+    description: 'Release token'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.release }}
+    - ${{ inputs.token }}
