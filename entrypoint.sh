@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 curl --request PATCH \
-     --header 'Authorization: Bearer ${INPUT_TOKEN}' \
+     --header 'Authorization: Bearer $2' \
      --header 'Content-type: application/json' \
      --header 'User-Agent: Github-Action' \
-     --url ${INPUT_RELEASE} \
+     --url $1 \
      --data '{ "draft": false }'
